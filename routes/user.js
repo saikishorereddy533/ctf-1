@@ -15,11 +15,11 @@ router.get("/",async(req,res)=>{
 })
 
 
-router.post("/captcha",isAuthenticated, async (req,res)=>{
-  console.log(req.body);
+router.post("/captcha/:id",isAuthenticated, async (req,res)=>{
+  console.log(req.params.id);
   if(req.body.captcha=="HRXrhsn"){
     console.log("inside if")
-    res.redirect("/getusers");
+    res.redirect("/logout");
   }
   else{
     console.log("inside else")
